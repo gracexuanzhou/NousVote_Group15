@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.0">
+    <menu>
+        <property name="inputmodes" value="dtmf"/>
+        <prompt>
+            Welcome to the Nous Vote!
+            If you want to vote please press 1, if you want to check the Live vote count
+            please press 2, if you want to check previous result please press 3.
+
+        </prompt>
+        <choice dtmf="1" next="http://webhosting.voxeo.net/208166/www/vote.xml"/>
+        <choice dtmf="2" next="http://webhosting.voxeo.net/208166/www/VoteCount.xml"/>
+        <choice dtmf="3" next="http://webhosting.voxeo.net/208166/www/result.xml"/>
+    </menu>
+</vxml>
