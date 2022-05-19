@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.0" application="http://webhosting.voxeo.net/208143/www/root.vxml">
+
+    <!-- main menu -->
+    <menu>
+        <property name="inputmodes" value="dtmf"/>
+        <prompt>
+            This is a result page. But no contents are available now.
+            <break time="500"/>
+            To end the call, please press the asterisk key.
+        </prompt>
+        <choice dtmf="1" next="http://webhosting.voxeo.net/208143/www/menu_en.xml"></choice>
+        <choice dtmf="2" next="http://webhosting.voxeo.net/208143/www/menu_en.xml"></choice>
+        <choice dtmf="*" event="end"></choice>
+        
+    </menu>
+
+</vxml>
