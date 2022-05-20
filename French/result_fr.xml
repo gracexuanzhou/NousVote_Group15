@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.0" application="http://webhosting.voxeo.net/208143/www/root.vxml">
+
+    <!-- main menu -->
+    <menu>
+        <property name="inputmodes" value="dtmf"/>
+        <prompt>
+            <audio src="https://web1230012.000webhostapp.com/result_fr/result1.wav"/>
+            <break time="500"/>
+            <audio src="https://web1230012.000webhostapp.com/result_fr/result2.wav"/>
+        </prompt>
+        <choice dtmf="1" next="http://webhosting.voxeo.net/208143/www/menu_fr_wav.xml"></choice>
+        <choice dtmf="2" next="http://webhosting.voxeo.net/208143/www/menu_fr_wav.xml"></choice>
+        <choice dtmf="*" event="end"></choice>
+
+    </menu>
+
+</vxml>

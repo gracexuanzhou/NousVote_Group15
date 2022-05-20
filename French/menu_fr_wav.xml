@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.0">
+    <!-- end event -->
+    <catch event="end">
+        <disconnect/>
+    </catch>
+
+    <menu>
+        <property name="inputmodes" value="dtmf"/>
+        <prompt>
+             <audio src="https://web1230012.000webhostapp.com/menu_fr/menu1.wav"/>
+            <break time="500"/>
+             <audio src="https://web1230012.000webhostapp.com/menu_fr/menu2.wav"/>
+            <break time="500"/>
+             <audio src="https://web1230012.000webhostapp.com/menu_fr/menu3.wav"/>
+            <break time="1000"/>
+              <audio src="https://web1230012.000webhostapp.com/menu_fr/menu4.wav"/>
+            <break time="1000"/>
+              <audio src="https://web1230012.000webhostapp.com/menu_fr/menu5.wav"/>
+            <break time="1000"/>
+             <audio src="https://web1230012.000webhostapp.com/menu_fr/menu6.wav"/>
+
+        </prompt>
+        <choice dtmf="1" next="http://webhosting.voxeo.net/208143/www/vote_fr.xml"/>
+        <choice dtmf="2" next="http://webhosting.voxeo.net/208143/www/result_fr.xml"/>
+        <choice dtmf="9" next="http://webhosting.voxeo.net/208143/www/main_page.xml"/>
+        <choice dtmf="*" event="end"/>
+    </menu>
+
+</vxml>
