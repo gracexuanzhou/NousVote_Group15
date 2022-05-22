@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.0" application="http://webhosting.voxeo.net/208143/www/root.vxml">
+    <property name="inputmodes" value="dtmf"/> <!-- set input to DTMF-->
+
+    <catch event="choice_voted">
+        <prompt>.</prompt>
+        <assign name="poll" expr="_message"/>
+        <goto next="#details"/>
+    </catch>
+
+    <!-- main menu -->
+    <menu id="confirm" scope="dialog" dtmf="true">
+        <prompt>
+            <audio src="https://web1230012.000webhostapp.com/vote_fr/vote1.wav"/>
+            <break time="1000"/>
+            <audio src="https://web1230012.000webhostapp.com/vote_fr/vote2.wav"/>
+            <break time="1000"/>
+            <audio src="https://web1230012.000webhostapp.com/vote_fr/vote3.wav"/>
+            <break time="500"/>
+            <audio src="https://web1230012.000webhostapp.com/vote_fr/vote4.wav"/>
+        </prompt>
+
+        <choice dtmf="1" event="choice_voted" message="YES"></choice> <!--submit polls-->
+        <choice dtmf="2" event="choice_voted" message="No"></choice>
+        <choice dtmf="9" next="http://webhosting.voxeo.net/208143/www/menu_fr_wav.xml"></choice> <!--back to main page-->
+        <choice dtmf="*" event="end"></choice>
+    </menu>
+
+    <form id="details">
+        <block>
+            <prompt>
+                <audio src="https://web1230012.000webhostapp.com/vote_fr/vote5.wav"/> <value expr="poll"/>.
+            </prompt>
+            <goto next="#submit_form"/>
+        </block>
+    </form>
+
+    <form id="submit_form">
+        <block>
+            <prompt> <audio src="https://web1230012.000webhostapp.com/vote_fr/vote6.wav"/> </prompt>
+            <break time="1000"/>
+            <goto next="#backend"/>
+        </block>
+    </form>
+
+    <form id="backend">
+        <block>
+            <if cond="poll == 'YES'">
+                <submit next="http://13.38.249.239:33333/post_yes.php" namelist="" method="get"/>
+                <else/>
+                <submit next="http://13.38.249.239:33333/post_no.php" namelist="" method="get"/>
+            </if>
+        </block>
+    </form>
+
+</vxml>
