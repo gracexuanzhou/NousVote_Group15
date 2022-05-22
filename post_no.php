@@ -8,6 +8,11 @@
  * @param array $post_data post键值对数据
  * @return string
  */
+
+$conf = include('config.php');
+$CHOI_ID = $conf->CHOI_ID_N;
+$VOTE_URL = $conf->VOTE_URL;
+
 function send_post($url, $post_data) {
  
     $postdata = http_build_query($post_data);
@@ -25,9 +30,9 @@ function send_post($url, $post_data) {
 }
 
 $post_data = array(
-    'choice' => '4'
+    'choice' => $CHOI_ID
 );
-send_post('http://13.38.249.239:8000/polls/3/vote/', $post_data);
+send_post($VOTE_URL, $post_data);
 echo "DONE"
 ?>
 
