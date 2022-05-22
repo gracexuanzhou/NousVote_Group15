@@ -9,7 +9,8 @@
             <break time="1000"/>
             For English service, please press 1.
             <break time="500"/>
-            For French service, please press 2.
+            <audio src="https://web1230012.000webhostapp.com/menu_main_fr/menu_fr.wav"/>
+        <!-- For French service, please press 2. -->
             <break time="1000"/>
             To end the call, Please press the asterisk key.
         </prompt>
